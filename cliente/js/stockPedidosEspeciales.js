@@ -63,4 +63,4 @@ function pedidoEspecialStockDesplegarTortas(oData) {
 		});
 	}
 	
-	/* FIN Programacion diaria pedidoEspecials */
+	/* FIN Stock pedidoEspecials */
