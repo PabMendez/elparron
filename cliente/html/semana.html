@@ -1,0 +1,121 @@
+<header>Semana</header>
+
+<div class="panel panel-default">
+	<div class="panel-body">
+		<div class="row">
+			<!-- Date -->
+			<div class="col-md-2">
+				<div id="contentCombo" class="form-group">
+					<label class="tamanoLabelGeneral">Día</label>
+					<select id="cmbDia" class="form-control select2 tamanoInputGeneral" title="Seleccione Dia"></select>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="form-group">
+					<label class="tamanoLabelGeneral">Sucursal</label>
+					<select id="cmbSemanaSucursal" class="form-control select2 tamanoInputGeneral" title="Seleccione Sucursal">
+						<!--<option selected="selected">:: Seleccione una Sucursal::</option>			-->
+					</select>
+				</div>
+
+			</div>
+
+		</div>
+		<div class="row">
+			<div class="table-responsive col-md-10">
+				<div id="contentTabla">
+
+					<table id="tabSemana" class="table table-striped table-bordered table-condensed tamanoTablasGeneral tableHover" cellspacing="0">
+						<thead>
+							<tr>
+								<th class="col-md-4">Torta</th>
+								<th class="col-md-1">1/2</th>
+								<th class="col-md-1">1</th>
+								<th class="col-md-1">2</th>
+								<th class="col-md-1">3</th>
+								<th class="col-md-2">Total</th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+			</div>
+			<div class="btn-group-md btn-group-vertical" id="divMenu">
+				<!--<button id="btnBuscarSemana" class="btn btn-primary m-b-boton" title="Buscar semana">Buscar</button>-->
+				<button id="btnNuevoSemana" class="btn btn-primary m-b-boton" title="Vacia semana">Nuevo</button>
+				<button id="btnRegistrarSemana" class="btn btn-primary" title="Registrar nuevo semana">Registrar</button>
+				<a href="javascript:demoFromHTML()" class="button">Run Code</a>
+
+			</div>
+
+		</div>
+	</div>
+</div>
+<div class="col-md-4 text-center" id="divErrors"></div>
+<!-- Inicio modal Validacion -->
+<div id="alertModal" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Error Detectado!</h4>
+			</div>
+			<div class="modal-body">
+				<p></p>
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-danger" data-dismiss="modal">
+                    Cerrar</button>
+			</div>
+		</div>
+		<!-- /.modal-content -->
+	</div>
+	<!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+<!-- Inicio modal Confirmacion registro -->
+<div id="alertModalReg" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Confirmación!</h4>
+			</div>
+			<div class="modal-body">
+				<p></p>
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-success" data-dismiss="modal">
+                    Close</button>
+			</div>
+		</div>
+		<!-- /.modal-content -->
+	</div>
+	<!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+<script src="js/jspdf.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function () {
+		semanaCargar();
+		desplegarDia($("#cmbDia"));
+	});
+
+	function demoFromHTML() {
+		var pdf = new jsPDF('p', 'pt', 'letter');
+		// source can be HTML-formatted string, or a reference
+		// to an actual DOM element from which the text will be scraped.
+		// source = $('#contentTabla')[0];
+		var options = {
+			pagesplit: true
+		};
+
+		// pdf.canvas.height = 200;
+		// pdf.canvas.width = 200;
+		/* pdf.fromHTML(source), options;
+		pdf.save('Test.pdf'); */
+		pdf.addHTML($("#contentTabla"), options, function () {
+			pdf.save("test.pdf");
+		});
+	}
+
+</script>

@@ -1,0 +1,129 @@
+<header>Pedidos</header>
+
+<div class="panel panel-default">
+    <div class="panel-body">
+
+        <div class="row">
+            <!-- FILA 1 -->
+            <!-- SOLICITANTE -->
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                <div class="form-group">
+                    <label class="tamanoLabelGeneral">Solicitante</label>
+                    <input id="txtSolicitante" type="text" class="form-control tamanoInputGeneral" placeholder="Nombre Solicitante">
+                </div>
+            </div>
+            <!-- TELEFONO -->
+            <div class="col-md-3 col-md-offset-1 col-sm-6 col-xs-6">
+                <div class="form-group">
+                    <label class="tamanoLabelGeneral">Teléfono</label>
+                    <input id="txtTelefono" type="text" class="form-control tamanoInputGeneral" placeholder="Teléfono" onkeypress="return validaTelefono(event)">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- FILA 2 -->
+            <!-- TIPO MASA -->
+
+            <div class="form-group col-md-2 col-sm-6 col-xs-6">
+                <label class="tamanoLabelGeneral">Tipo Masa</label>
+                <select id="cmbTipoMasa" class="form-control select2 tamanoInputGeneral"></select>
+            </div>
+            <!--SABOR MASA-->
+            <div class="form-group col-md-2 col-sm-6 col-xs-6">
+                <label class="tamanoLabelGeneral">Sabor Masa</label>
+                <select id="cmbSaborMasa" class="form-control select2 tamanoInputGeneral"></select>
+            </div>
+            <!-- SABOR -->
+            <div class="form-group col-md-2 col-sm-6 col-xs-6">
+                <label class="tamanoLabelGeneral">Sabor Torta</label>
+                <select id="cmbSabor" class="form-control select2 tamanoInputGeneral"></select>
+            </div>
+            <!-- FECHA ENTREGA -->
+            <div class="col-md-3 col-md-offset-1 col-sm-6 col-xs-6">
+                <div class="form-group">
+                    <label class="tamanoLabelGeneral">Fecha Entrega</label>
+                    <div class='input-group date'>
+                        <input type='text' class="form-control tamanoInputGeneral" id='datePedido' placeholder="Fecha y Hora" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /.form group -->
+            <!-- time Picker -->
+        </div>
+
+        <div class="row">
+            <!-- FILA 3 -->
+            <!--SUCURSAL RETIRO-->
+            <div class="form-group col-md-3 col-sm-6 col-xs-6">
+                <label class="tamanoLabelGeneral">Sucursal de Retiro</label>
+                <select id="cmbSucursalRetiro" class="form-control tamanoInputGeneral"></select>
+            </div>
+
+            <!--CANTIDAD PERSONAS RADIOBUTTON-->
+            <div class="form-group col-md-offset-1 col-md-4 col-sm-6 col-xs-12">
+                <label class="tamanoLabelGeneral">Tamaño</label>
+                <ul class="listado-ul tamanoInputGeneral" data-toggle="buttons" id="ulTamano"></ul>
+            </div>
+
+            <!--CAMPO HIDDEN-->
+            <ul id="ulTorta" style="visibility: hidden;"></ul>
+        </div>
+
+        <div class="row">
+            <!-- FILA 4 -->
+            <!-- PRECIO -->
+            <div class="col-md-3 col-sm-6 col-xs-6 pedidoPrecio">
+                <label class="tamanoLabelGeneral">Precio</label>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
+                    <!--<input id="txtPrecio" type="text" class="form-control" placeholder="" >-->
+                    <ul class="tamanoInputGeneral" id="ulPrecio"></ul>
+                </div>
+            </div>
+            <!--BOTONES-->
+            <div class="btn-group-md btn-toolbar pull-right pedidoBotones">
+                <button id="btnNuevoPedido" class="btn btn-primary btn-md">Nuevo</button>
+                <button id="btnRegistrarPedido" data-target="#alertModal" class="btn btn-success btn-md">Registrar</button>
+            </div>
+        </div>
+        <!-- <div class="row">
+            <div class="pull-right">
+                <button id="btnNuevoPedido" class="btn btn-primary btn-md">Nuevo</button>
+                <button id="btnRegistrarPedido" data-target="#alertModal" class="btn btn-success btn-md">Registrar</button>
+            </div>
+        </div> -->
+    </div>
+    <!-- Inicio modal -->
+    <div id="alertModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Error Detectado!</h4>
+                </div>
+                <div class="modal-body">
+                    <p></p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-danger" data-dismiss="modal">
+                    Cerrar</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+</div>
+<script>
+    $(document).ready(function () {
+        pedidoCargarFechaYHora();
+        pedidoCargar();
+    });
+
+</script>

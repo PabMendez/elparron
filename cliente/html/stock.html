@@ -1,0 +1,94 @@
+<header>Stock</header>
+
+<div class="panel panel-default">
+	<div class="panel-body" id="panelPedido">
+		<div class="row">
+			<div class="col-md-3 col-xs-12 col-sm-6">
+				<div class="form-group">
+					<label class="tamanoLabelGeneral">Sucursal</label>
+					<select id="cmbStockSucursal" class="form-control select2 tamanoInputGeneral" title="Seleccione Sucursal">
+						<!--<option selected="selected">:: Seleccione una Sucursal::</option>			-->
+					</select>
+				</div>
+
+			</div>
+			
+		</div>
+		<!-- Primera fila tablas -->
+		<div class="row" id="contenidoFilaUno">
+			<!--Programacion Normal-->
+			<div id="divProgramacionDiaria" class="table-responsive col-md-6 programacionDiaria-rueda-panel page1">
+				<table id="tabProgramacionDiaria" class="table table-striped table-bordered table-condensed programacionDiariaTablas tableHover">
+					<thead>
+						<tr>
+							<th colspan="6">Programación normal</th>
+						</tr>
+						<tr>
+							<th>Torta</th>
+							<th>1/2</th>
+							<th>1</th>
+							<th>2</th>
+							<th>3</th>
+							<th>Total</th>
+						</tr>
+					</thead>
+				</table>
+			</div>
+			<!--Stock Pedido-->
+			<div id="divStockPedido" class="table-responsive col-md-6 programacionDiaria-rueda-panel page3">
+				<table id="tabPedidoStock" class="table table-striped table-bordered table-condensed programacionDiariaTablas tableHover">
+					<thead>
+						<tr>
+							<th colspan="6">Pedidos Internet</th>
+						</tr>
+						<tr>
+							<th>Torta</th>
+							<th>1/2</th>
+							<th>1</th>
+							<th>2</th>
+							<th>3</th>
+							<th>Total</th>
+						</tr>
+					</thead>
+					<tbody>
+
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<br><br>
+		<!-- Segunda fila tablas -->
+		<div class="row">
+			<!--Stock Pedido Especial-->
+			<div id="divPEPD" class="table-responsive col-md-6 programacionDiaria-rueda-panel">
+				<table id="tabPedidoEspecialStock" class="table table-striped table-bordered table-condensed programacionDiariaTablas tableHover">
+					<thead>
+						<tr>
+							<th colspan="5">Pedidos Especiales</th>
+						</tr>
+						<tr>
+							<th>N°</th>
+							<th>Torta</th>
+							<th>Tamaño</th>
+							<th>Forma</th>
+							<th>Diet</th>
+							<!-- <th>Total</th> -->
+						</tr>
+					</thead>
+				</table>
+			</div>
+		</div>
+		<br><br>
+	</div>
+</div>
+<script src="js/jquery.qrcode.min.js"></script>
+<script src="js/stockPedidos.js"></script>
+<script src="js/stockPedidosEspeciales.js"></script>
+<script>
+	$(document).ready(function () {
+		stockCargar();
+		stockPedidoCarga();
+		stockPedidoEspecialCarga();
+	});
+
+</script>

@@ -1,0 +1,119 @@
+<!-- <script src="js/locales/bootstrap-datepicker.es.min.js" charset="UTF-8"></script> -->
+<header>Sobrantes</header>
+
+<div class="panel panel-default">
+	<div class="panel-body">
+		<div class="row">
+			<!-- FECHA ENTREGA -->
+			<div class="col-md-4">
+				<div class="form-group">
+					<label class="tamanoLabelGeneral">Fecha Entrega</label>
+					<div class="input-group date">
+						<div class="input-group-addon">
+							<i class="fa fa-calendar"></i>
+						</div>
+						<input type="text" class="form-control col-md-4 tamanoInputGeneral" id="dateSobrante" title="Seleccione Fecha">
+					</div>
+					<!-- /.input group -->
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="form-group">
+					<label class="tamanoLabelGeneral">Sucursal</label>
+					<select id="cmbSobranteSucursal" class="form-control select2 tamanoInputGeneral" title="Seleccione Sucursal">
+						<!--<option selected="selected">:: Seleccione una Sucursal::</option>			-->
+					</select>
+				</div>
+
+			</div>
+			<div class="col-md-4 text-center" id="divErrorsSobrante"></div>
+			<!-- Inicio modal Validacion -->
+			<div id="alertModal" class="modal fade">
+				<div class="modal-dialog">
+					<div class="modal-content modalErrorGeneral">
+						<div class="modal-header">
+							<button class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">Error Detectado!</h4>
+						</div>
+						<div class="modal-body">
+							<p></p>
+						</div>
+						<div class="modal-footer">
+							<button class="btn btn-danger" data-dismiss="modal">
+                    Cerrar</button>
+						</div>
+					</div>
+					<!-- /.modal-content -->
+				</div>
+				<!-- /.modal-dialog -->
+			</div>
+			<!-- /.modal -->
+			<!-- Inicio modal Confirmacion registro -->
+			<div id="alertModalRegSob" class="modal fade">
+				<div class="modal-dialog" style="width:200px;font-size:1em;">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">Confirmación!</h4>
+						</div>
+						<div class="modal-body">
+							<p></p>
+						</div>
+						<div class="modal-footer">
+							<button class="btn btn-success" data-dismiss="modal">
+                    Cerrar</button>
+						</div>
+					</div>
+					<!-- /.modal-content -->
+				</div>
+				<!-- /.modal-dialog -->
+			</div>
+			<!-- /.modal -->
+		</div>
+		<div class="row">
+			<!--TIPO-->
+			<div class="table-responsive col-md-10">
+				<table id="tabSobrante" class="table table-striped table-bordered table-condensed tamanoTablasGeneral tableHover" cellspacing="0"
+				 cellpadding="0">
+					<thead>
+						<tr>
+							<th class="col-md-4">Torta</th>
+							<th class="col-md-1">1/2</th>
+							<th class="col-md-1">1</th>
+							<th class="col-md-1">2</th>
+							<th class="col-md-1">3</th>
+							<th class="col-md-2">Total</th>
+						</tr>
+					</thead>
+					<tbody></tbody>
+				</table>
+			</div>
+			<div class="btn-group-md btn-group-vertical" id="divMenu">
+				<a id="clickbind" href="#">Click</a>
+				<button id="btnNuevoSobrante" class="btn btn-primary m-b-boton" title="Vacia sobrante">Nuevo</button>
+				<button id="btnRegistrarSobrante" class="btn btn-primary" title="Registrar nuevo sobrante">Registrar</button>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="js/jspdf.min.js"></script>
+<script>
+	$(document).ready(function () {
+		sobranteCargarFecha();
+		sobranteCargar();
+	});
+
+	function onClick() {
+		var pdf = new jsPDF('p', 'pt', 'letter');
+		pdf.canvas.height = 72 * 11;
+		pdf.canvas.width = 72 * 8.5;
+
+		pdf.fromHTML(document.body);
+
+		pdf.save('test.pdf');
+	};
+
+	var element = document.getElementById("clickbind");
+	element.addEventListener("click", onClick);
+
+</script>

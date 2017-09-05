@@ -1,0 +1,197 @@
+<header>Pedidos Especiales</header>
+
+<div class="panel panel-default">
+	<div class="panel-body">
+
+		<div class="row">
+			<!-- FILA 1 -->
+			<!-- SOLICITANTE -->
+			<div class="col-md-6">
+				<div class="form-group">
+					<label class="tamanoLabelGeneral">Solicitante</label>
+					<input id="txtSolicitante" type="text" class="form-control tamanoInputGeneral" placeholder="Nombre Solicitante">
+				</div>
+			</div>
+			<!-- TELEFONO -->
+			<div class="col-md-2">
+				<div class="form-group">
+					<label class="tamanoLabelGeneral">Teléfono</label>
+					<input id="txtTelefono" type="text" class="form-control tamanoInputGeneral" placeholder="Teléfono" onkeypress="return validaSoloNumeros(event)">
+				</div>
+			</div>
+			
+		</div>
+		<!-- FILA 2 -->
+		<div class="row">
+			<!-- TIPO MASA -->
+			<div class="form-group col-md-2 col-xs-6 col-sm-3">
+				<label class="tamanoLabelGeneral">Tipo Masa</label>
+				<select id="cmbTipoMasa" class="form-control select2 tamanoInputGeneral"></select>
+			</div>
+			<!--SABOR MASA-->
+			<div class="form-group col-md-2 col-xs-6 col-sm-3">
+				<label class="tamanoLabelGeneral">Sabor Masa</label>
+				<select id="cmbSaborMasa" class="form-control select2 tamanoInputGeneral"></select>
+			</div>
+			<!-- SABOR -->
+			<div class="form-group col-md-2 col-xs-6 col-sm-3">
+				<label class="tamanoLabelGeneral">Sabor Torta</label>
+				<select id="cmbSabor" class="form-control select2 tamanoInputGeneral"></select>
+			</div>
+			<!--CANTIDAD PERSONAS RADIOBUTTON-->
+			<div class="orm-group col-md-2 col-xs-6 col-sm-3">
+				<label class="tamanoLabelGeneral">Tamaño</label>
+				<select id="cmbTamano" class="form-control select2 tamanoInputGeneral"></select>
+			</div>
+			<!-- STOCK -->
+			 <div class="col-md-4 pedidoEspecialStock">
+				<table id="stock" class="table table-striped table-bordered table-condensed tableHover programacionDiariaTablas" cellspacing="0">
+					<thead>
+						<tr>
+							<th colspan="4" style="text-align: center;">Stock</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th class="col-md-2 col-sm-6 col-xs-6">Panqueque Blanco</th>
+							<td class="col-md-1">3</td>
+							<td class="col-md-1">3</td>
+							<td class="col-md-1">3</td>
+						</tr>
+						<tr>
+							<th>Panqueque Chocolate</th>
+							<td>1</td>
+							<td>1</td>
+							<td>1</td>
+						</tr>
+						<tr>
+							<th>Merengue</th>
+							<td>2</td>
+							<td>2</td>
+							<td>2</td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<th colspan="4" style="text-align: center;">Stock</th>
+						</tr>
+					</tfoot>
+				</table>
+			</div> 
+		</div>
+		<!-- FILA 3 -->
+		<div class="row">
+			<!-- CARACTERISTICAS -->
+			<div class="col-md-8">
+				<div class="form-group">
+					<label class="tamanoLabelGeneral">Características</label>
+					<textarea id="txtCaracteristicas" class="form-control tamanoInputGeneral" rows="3" placeholder="Ingrese Características..."></textarea>
+				</div>
+			</div>
+			<!-- CHECKBOX -->
+			<div class="col-md-4" style="margin-top: 12px">
+				<label class="tamanoLabelGeneral">Tipo</label>
+				<div><input type="checkbox" name="diet" id="chDiet" class="CheckboxDiet" value="1"> Diet</div>
+				<div><input type="checkbox" name="cuadrada" id="chForma" class="CheckboxForma" value="1"> Cuadrada</div>
+			</div>
+		</div>
+		<!-- FILA 4 -->
+		<div class="row">
+			<!-- MENSAJE -->
+			<div class="col-md-8">
+				<div class="form-group">
+					<label class="tamanoLabelGeneral">Mensaje</label>
+					<input id="txtMensaje" type="text" class="form-control tamanoInputGeneral" placeholder="Mensaje..">
+				</div>
+			</div>
+			<!--SUCURSAL RETIRO-->
+			<div class="form-group col-md-2">
+				<label class="tamanoLabelGeneral">Sucursal de Retiro</label>
+				<select id="cmbSucursalRetiro" class="form-control tamanoInputGeneral">
+
+                </select>
+			</div>
+		</div>
+		<!-- FILA 5 -->
+		<div class="row">
+			<!-- PRECIO -->
+			<div class="col-md-2">
+				<label class="tamanoLabelGeneral">Precio</label>
+				<div class="input-group">
+					<span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
+					<!--<input id="txtPreciosEsp" type="text" class="form-control" placeholder="" >-->
+					<ul class="listado-ul tamanoInputGeneral" id="ulPrecio"></ul>
+				</div>
+			</div>
+			<!-- ABONO -->
+			<div class="col-md-offset-4 col-md-2">
+				<label class="tamanoLabelGeneral">Abono</label>
+				<div class="input-group">
+					<span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
+					<input id="txtAbono" type="text" class="form-control tamanoInputGeneral" placeholder="" onkeypress="return validaSoloNumeros(event)">
+				</div>
+			</div>
+			<!-- FECHA ENTREGA -->
+			<div class="col-md-2">
+				<div class="form-group">
+					<label class="tamanoLabelGeneral">Fecha Entrega</label>
+					<div class='input-group date'>
+						<input type='text' class="form-control tamanoInputGeneral" id='datePedidoEspecial' placeholder="Fecha y Hora" />
+						<span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+						</span>
+					</div>
+				</div>
+			</div>
+			<!--CAMPO HIDDEN-->
+			<ul id="ulTorta" style="visibility: hidden;"></ul>
+		</div>
+		<!-- FILA 6 -->
+		<div class="row">
+			<!-- TOTAL A PAGAR -->
+			<div class="col-md-2">
+				<label class="tamanoLabelGeneral">Total a Pagar</label>
+				<div class="input-group">
+					<span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
+					<!--<input id="txtPreciosEsp" type="text" class="form-control" placeholder="" >-->
+					<ul class="listado-ul tamanoInputGeneral" id="ulPagoTotal"></ul>
+				</div>
+			</div>
+			<!--BOTONES-->
+			<div class="pull-right">
+				<button id="btnNuevoPedidoEspecial" class="btn btn-primary btn-md">Nuevo</button>
+				<button id="btnRegistrarPedidoEspecial" data-target="#alertModal" class="btn btn-success btn-md">Registrar</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Inicio modal -->
+<div id="alertModal" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Error Detectado!</h4>
+			</div>
+			<div class="modal-body">
+				<p></p>
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-danger" data-dismiss="modal">
+                    Cerrar</button>
+			</div>
+		</div>
+		<!-- /.modal-content -->
+	</div>
+	<!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+</div>
+</div>
+<script>
+	$(document).ready(function () {
+		pedidoCargarFechaYHoraEsp();
+		pedidoCargarEsp();
+	});
+
+</script>

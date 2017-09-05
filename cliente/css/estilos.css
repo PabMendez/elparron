@@ -1,0 +1,430 @@
+/*@import url("http://bootswatch.com/darkly/bootstrap.min.css");*/
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-size: 1em;
+    font-family: verdana;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    /*background-color: #E6E6FA;*/
+    background-color: #ECF0F5;
+}
+
+#cma-layout {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+
+#cma-layout>header {
+    background-color: #367FA9;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    color: white;
+}
+
+
+/* Agrega padding al icono de menu */
+
+#botonMenu {
+    padding: 18px;
+    margin-left: -10px;
+}
+
+#cma-layout>header>span {
+    font-size: 1.2em;
+}
+
+#cma-layout>content {
+    flex: 2;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+#cma-layout>content>nav {
+    background-color: #222D32;
+    width: 200px;
+    position: absolute;
+    left: -200px;
+    transition: left .5s;
+    height: 100%;
+    z-index: 9999;
+}
+
+#cma-layout>content>nav * {
+    color: #7E7F5C;
+}
+
+#cma-layout>content>nav>header {
+    color: white;
+    line-height: 50px;
+    text-align: center;
+    font-size: 1.1em
+}
+
+#cma-layout>content>section {
+    padding: 20px;
+    width: 100%;
+}
+
+#cma-layout>content>section>header {
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+    font-size: 1.3em;
+    border-bottom: 3px solid silver;
+    margin-bottom: 10px;
+}
+
+#cma-accordion>li {
+    color: #7E7F5C;
+    align-items: center;
+    border-left: 5px solid transparent;
+    padding-left: 10px;
+    cursor: pointer;
+    line-height: 30px;
+}
+
+#cma-accordion ul {
+    margin-left: 0px;
+    display: none;
+    background-color: #1A2226;
+    padding-left: 45px;
+}
+
+#cma-accordion ul>li {
+    color: #7E7F5C;
+    cursor: pointer;
+    line-height: 30px;
+    list-style: none;
+}
+
+#cma-accordion ul>li:hover {
+    color: white;
+}
+
+#cma-accordion>li:hover,
+.liSel {
+    background-color: #1A2226;
+    color: white;
+    border-left: 5px solid #3C8DBC;
+}
+
+#cma-accordion>li>i {
+    width: 20px;
+    text-align: center;
+}
+
+
+/* Clase para hacer "hover" en las tablas sin afectar los calendarios */
+
+.tableHover tbody tr:hover {
+    background-color: #337AB7;
+    color: black;
+}
+
+
+/*
+.table tbody tr:hover td, .table tbody tr:hover th {
+    background-color: #eeeeea;
+}*/
+
+.bNESE {
+    border-radius: 0px 3px 3px 0px;
+}
+
+.bNOSO {
+    border-radius: 3px 0px 0px 3px;
+}
+
+.toolbar {
+    float: left;
+}
+
+
+/* 
+ .table {
+    width: 100%;
+    table-layout: fixed;
+} */
+
+
+/* Alinea al centro el texto del THEAD */
+
+.table tr,
+th,
+td {
+    text-align: center;
+}
+
+
+/* Inicio filtrado tablas */
+
+.results tr[visible='false'],
+.no-result {
+    display: none;
+}
+
+.results tr[visible='true'] {
+    display: table-row;
+}
+
+.counter {
+    padding: 8px;
+    color: #ccc;
+}
+
+
+/* FIN filtrado tablas */
+
+
+/*.table th{
+	background-color: #337AB7;
+	color: white;
+}*/
+
+.item td input {
+    text-align: center;
+    border: none;
+    width: 20px;
+    border: none;
+    background-color: transparent;
+}
+
+.item td input:active {
+    background-color: red;
+}
+
+i {
+    margin: 1px;
+}
+
+i:hover {
+    color: black;
+}
+
+
+/* grupo de botones */
+
+
+/* boton al medio de 2 botones con btn-group en Historico*/
+
+.m-b-boton {
+    margin-bottom: 10px;
+}
+
+
+/* Margin Top para boton lateral de la tabla en Maestro Torta */
+
+.mt-btn-torta {
+    margin-top: 382px;
+    margin-left: -500px;
+}
+
+
+/* Agrega Scrollbar */
+
+.rueda-panel {
+    min-height: 50px;
+    max-height: 484px;
+    overflow-y: scroll;
+    margin-right: 15px;
+}
+
+
+/*da margen al boton agregar*/
+
+.margenTopBtn {
+    margin-top: 350px;
+}
+
+
+/*agrega margen top a radio button en pedido*/
+
+.m-t-radio {
+    margin: 20px 5px 5px 0px;
+}
+
+#btnNuevoTamaño {
+    margin-top: 350px;
+}
+
+.comboTamano {
+    font-size: 15px;
+}
+
+.panel {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: -10px;
+    /* border-top: 5px solid #367FA9; */
+    /*border-bottom: 3px solid #367FA9;*/
+}
+
+
+/* #divErrors{
+	margin-top: 7px;
+} */
+
+
+/* Programacion diria, estilos a tablas */
+
+.programacionDiariaTablas {
+    margin: 0px;
+    padding: 0px;
+    font-size: 0.8em;
+}
+
+.programacionDiaria-rueda-panel {
+    min-height: 50px;
+    max-height: 404px;
+    overflow-y: scroll;
+}
+
+.tortaPrecio-rueda-panel {
+    min-height: 50px;
+    max-height: 404px;
+    overflow-y: scroll;
+    margin-right: 15px;
+}
+
+.programacionDiaria-botones {
+    margin-top: 25px;
+}
+
+
+/* Alinea radio buttons pedidoEspecial */
+
+.radio-inline:nth-child(1) {
+    margin-left: 10px;
+}
+
+.radio-inline:nth-child(2) {
+    margin-left: 20px;
+}
+
+
+/* Alinea radio buttons pedido */
+
+.radio-inlinePedido {
+    display: block;
+    list-style: none;
+    width: 100%;
+}
+
+.radio-inlinePedido:nth-child(1) {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.radio-inlinePedido:nth-child(2) {
+    margin-top: -30px;
+    margin-bottom: 10px;
+    margin-left: 150px;
+}
+
+.radio-inlinePedido:nth-child(3) {}
+
+.radio-inlinePedido:nth-child(4) {
+    margin-top: -26px;
+    margin-left: 150px;
+}
+
+
+/* Tablas en general */
+
+.tamanoTablasGeneral {
+    margin: 0px;
+    padding: 0px;
+    font-size: 0.9em;
+}
+
+
+/* Inputs en general */
+
+.tamanoInputGeneral {
+    font-size: 0.9em;
+}
+
+
+/* Labels en general */
+
+.tamanoLabelGeneral {
+    font-size: 0.95em;
+}
+
+
+/* Modal de error */
+
+.modalErrorGeneral {
+    font-size: .95em;
+}
+
+
+/* Pedido especial stock */
+
+.pedidoEspecialStock {
+    margin-top: -65px;
+}
+
+
+/* Pedido precio margin-top*/
+
+.pedidoPrecio {
+    margin-top: -50px;
+    margin-bottom: 20px;
+}
+
+
+/* Pedido Botones */
+
+.pedidoBotones {
+    margin-top: -25px;
+}
+
+.listado-ul {
+    list-style: none;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .radio-inlinePedido {
+        list-style: none;
+    }
+    .radio-inlinePedido:nth-child(2) {
+        margin-left: 120px;
+    }
+    .radio-inlinePedido:nth-child(4) {
+        margin-left: 120px;
+    }
+    .pedidoBotones {
+        margin-right: 15px;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    /* For tablets: */
+    .radio-inlinePedido {
+        display: block;
+        list-style: none;
+        width: 100%;
+    }
+    .radio-inlinePedido:nth-child(4) {
+        margin-bottom: 50px;
+    }
+    .pedidoBotones {
+        margin-top: -30px;
+    }
+}
+
