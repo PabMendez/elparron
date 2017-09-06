@@ -75,6 +75,12 @@
 					"texto":  "Torta Precio",
 					"objeto": "tortaPrecio"
 				}
+				,
+				{
+					"pagina": "conteo.html",
+					"texto":  "Conteo",
+					"objeto": "conteo"
+				}
 			]
 		}		
 	]
